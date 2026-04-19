@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasteful-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wasteful
+  template:
+    metadata:
+      labels:
+        app: wasteful
+    spec:
+      containers:
+      - name: wasteful-container
+        image: nginx:alpine
+        resources:
+          # THE WASTE: Requesting 1 full CPU and 1GB RAM per pod!
+          # Actual usage of an idle Nginx pod is closer to 0.001 CPU.
+          requests:
+            cpu: "1"      
+            memory: "1Gi" 
+          limits:
+            cpu: "2"
+            memory: "2Gi"

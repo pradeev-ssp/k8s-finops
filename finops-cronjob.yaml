@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: weekly-finops-audit
+spec:
+  # THE SCHEDULE: 09:00 AM every Monday
+  schedule: "0 9 * * 1" 
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: engine
+            image: finops-engine:v3
+            imagePullPolicy: Never # Use the local image we just built
+            env:
+            - name: PROMETHEUS_URL
+              # We use the internal K8s address instead of localhost!
+              value: "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090/api/v1/query"
+          restartPolicy: OnFailure

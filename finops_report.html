@@ -1,0 +1,50 @@
+
+    <html>
+        <head>
+            <title>Weekly K8s FinOps Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+                th { background-color: #f4f4f4; }
+                .summary { font-size: 1.2em; margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 5px; }
+            </style>
+        </head>
+        <body>
+            <h1>Kubernetes FinOps Audit Report</h1>
+            <p>Generated on: 2026-04-19 11:38:07</p>
+            
+            <div class="summary">
+                <strong>🚨 Total Monthly Waste Identified:</strong> $80.00
+            </div>
+
+            <h2>High Priority: Deployments > 50% Waste</h2>
+            <table>
+                <tr>
+                    <th>Pod Name</th>
+                    <th>Requested CPU</th>
+                    <th>Actual CPU (Peak)</th>
+                    <th>Waste %</th>
+                    <th>Developer Recommendation</th>
+                </tr>
+                
+            <tr style="background-color: #ffebee;">
+                <td>wasteful-app-857c9d4d5f-ljggw</td>
+                <td>1.00 Cores</td>
+                <td>0.0000 Cores</td>
+                <td style="color: red; font-weight: bold;">100.0%</td>
+                <td>Reduce YAML request to: 0.00 (Includes 20% safety buffer)</td>
+            </tr>
+            
+            <tr style="background-color: #ffebee;">
+                <td>wasteful-app-857c9d4d5f-6cnbn</td>
+                <td>1.00 Cores</td>
+                <td>0.0000 Cores</td>
+                <td style="color: red; font-weight: bold;">100.0%</td>
+                <td>Reduce YAML request to: 0.00 (Includes 20% safety buffer)</td>
+            </tr>
+            
+            </table>
+        </body>
+    </html>
+    
